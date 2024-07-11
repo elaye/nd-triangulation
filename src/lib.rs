@@ -13,7 +13,8 @@ extern crate cpp;
 cpp! {{
     #include <iterator>
     #include <CGAL/Epick_d.h>
-    #include <CGAL/Triangulation.h>
+    // #include <CGAL/Triangulation.h>
+    #include <CGAL/Delaunay_triangulation.h>
 
     using DynDimension = CGAL::Dynamic_dimension_tag;
     using K = CGAL::Epick_d<DynDimension>;
@@ -21,7 +22,8 @@ cpp! {{
     using Vertex = CGAL::Triangulation_vertex<K, size_t>;
     using FullCell = CGAL::Triangulation_full_cell<K, size_t>;
     using TDS = CGAL::Triangulation_data_structure<DynDimension, Vertex, FullCell>;
-    using Triangulation = CGAL::Triangulation<K, TDS>;
+    // using Triangulation = CGAL::Triangulation<K, TDS>;
+    using Triangulation = CGAL::Delaunay_triangulation<K, TDS>;
 
 }}
 

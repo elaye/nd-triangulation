@@ -1,7 +1,7 @@
 use crate::Cell;
 
 /// A vertex which is part of a triangulation
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Vertex<'a> {
     ptr: *mut u8, //c++ type: Vertex_handle
     cell: &'a Cell<'a>,
